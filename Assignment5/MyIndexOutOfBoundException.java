@@ -25,10 +25,23 @@ public class MyIndexOutOfBoundException extends Exception{
 				System.out.println("Working Message: Index: " + a + ", Lower bound: " + lowerBound + ", Upper bound: " + upperBound );
 			}
 		} catch ( Exception e) {
-			System.out.println(e);
+			System.out.println(e.toString());
 		}
 
+//		int[] arr = {1,2,3,4,5,6,7};
+//		for(int i = 0; i <= arr.length; i++) {
+//			try {
+//				if(i >= arr.length) {
+//					throw new MyIndexOutOfBoundException(0,(arr.length - 1), i);
+//				} else {
+//					System.out.println("Working Message: Index: " + i + ", Lower bound: " + "0" + ", Upper bound: " + (arr.length - 1) );
+//				}
+//			} catch ( Exception e) {
+//				System.out.println(e.toString());
+//			}
+//		}
 	}
+
 
 	public String toString() {
 		return "Error Message: Index: " + index + ", but Lower bound: " + lowerBound + ", Upper bound: " + upperBound ; 

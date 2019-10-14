@@ -1,4 +1,4 @@
-package petsAssignment5;
+package PetsTracking;
 
 public class Pet {
 

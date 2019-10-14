@@ -1,30 +1,30 @@
-package petsAssignment5;
+package PetsTracking;
 
 import java.util.Date;
 
-public class Dog extends Pet implements Boardable {
+public class Cat extends Pet implements Boardable {
 
-	private String size;
+	private String hairLength;
 	private Date boardStartDate;
 	private Date boardEndDate;
 
-	public Dog(String petName, String ownerName, String color, String size) {
+	public Cat(String petName, String ownerName, String color, String hairLength) {
 		super(petName, ownerName, color);
-		this.size = size;
+		this.hairLength = hairLength;
 	}
 
-	public String getSize() {
-		return size;
+	public String getHairLength() {
+		return hairLength;
 	}
 
 	public String toString() {
 		StringBuilder sb =new StringBuilder();
-		sb.append("DOG: " + "\n");
+		sb.append("CAT: "+ "\n");
 		//		sb.append(getPetName() + " owned by " + getOwnerName() + "\n");
 		//		sb.append("Color: " + getColor() + "\n");
 		//		sb.append("Sex: " + getSex() + "\n");
 		sb.append(super.toString() + "\n");
-		sb.append("Size: " + getSize());
+		sb.append("Hair: " + getHairLength());
 		return sb.toString();
 	}
 
@@ -57,12 +57,12 @@ public class Dog extends Pet implements Boardable {
 	}
 
 	public static void main(String[] args) {
-		Dog d = new Dog("Spot", "Susan","White","medium");
-		d.setSex(3);
-		System.out.println(d.toString());
-		d.setBoardStart(01, 01, 2019);
-		d.setBoardEnd(03, 30, 2019);
-		//System.out.println("Given data is between or equal to the start and end dates: " + d.boarding(01,15,2019));
+		Cat c = new Cat("Tom", "Bob","black","short");
+		c.setSex(3);
+		System.out.println(c.toString());
+		c.setBoardStart(01, 01, 2019);
+		c.setBoardEnd(03, 30, 2019);
+		//System.out.println("Given data is between or equal to the start and end dates: " + c.boarding(03, 30, 2019));
 	}
 
 }
