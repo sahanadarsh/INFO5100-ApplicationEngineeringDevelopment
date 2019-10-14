@@ -1,0 +1,64 @@
+Explain the difference between final and finally in Java 8.
+
+final :
+
+1. final is used to apply restrictions on class, method and variable.
+2. Making the class final means that it won't be extended by another classes
+3. Making the method final means that it won't be overridden in the child classes
+4. Making the variable,instant fields or parameter final means that it won't be changed after they are initialized
+
+for example : 
+-------------------------------------------
+public class Student{
+
+    String name;
+    final int age = 20; 
+
+    public Student(){
+     
+       name = John;
+       age = 30;  // not OK because age variable is final, gives compilation error
+    }
+}
+
+----------------------------------------------
+
+public final Apple extends Fruit{
+    //......
+}
+
+public class AppleJuice extends Apple{
+    // NOT OK --> gives compilation error
+}
+
+----------------------------------------------
+
+
+finally :
+
+1. finally block is an optional block used in exception handling with try/catch block
+2. finally block is used to do opearation irresective of the exception thrown or not 
+
+
+for example :
+
+public class Number {
+
+	public static void main(String[] args) {
+		int firstNumber = 10;
+		int secondNumber = 0;
+		System.out.println("quotient is " + count(firstNumber,secondNumber ));
+	}
+
+	public static int count(int firstNumber, int secondNumber) {
+		int result = 0;
+		try {
+			result = firstNumber % secondNumber;
+		} catch(ArithmeticException exe){
+			System.out.println("error: " + exe.getMessage());
+		} finally {
+			System.out.println("executing final block");
+		}
+		return result;
+	}
+}

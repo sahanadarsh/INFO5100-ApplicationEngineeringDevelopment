@@ -1,0 +1,79 @@
+
+Give the answer shows in console and explain why. (For example, list the operation order of statements.)
+
+class A {
+	List<Object> list = new LinkedList<>();
+	public boolean addAll(Collection<Object> c) {
+		Iterator<Object> it = c.iterator();
+		while(it.hasNext())
+			this.add(it.next());
+		return true;
+	}
+	public boolean add(Object e) {
+		list.add(e);
+		return true;
+	}
+
+	private int i = 0;
+	public int getI(){
+		return i;
+	}
+}
+
+class B extends A {
+	private int addCount = 0;
+	public int getAddCount() {
+		return addCount;
+	}
+
+	@Override
+	public boolean addAll(Collection<Object> c) {
+		addCount += c.size();
+		return super.addAll(c);
+	}
+	
+	@Override
+	public boolean add(Object e) {
+		addCount++;
+		return super.add(e);
+	}
+    
+	public int i = 3;
+}
+
+public class Test {
+	public static void main(String[] args) {
+		B b = new B();
+		List<Object> list = Arrays.asList(1,2,3);
+		b.addAll(list);
+		System.out.println(b.getAddCount()+b.getI());
+	}
+}
+
+
+Answer shows in console
+6 
+
+the order of operations
+
+Statement 1 : Creates an object b of class B that extends class A
+Statement 2 : Creates and initializes a list {1,2,3} of type Object
+Statement 3 : addAll method of object b is invoked by passing list as a parameter
+              a. addAll overriden method of class B is invoked
+  	      b. The size of list is added to the addCount member variable i.e., addCount = 3
+ 	      c. addAll of the parent class A is invoked by passing the list as an argument
+	      d. In the addAll of the parent class A, iterator 'it' is initialized to the list
+	      e. iterator gets next element 'e' of the list and executes the following for each 'e'
+			i. add method of class B is invoked using this operator
+			ii. addCount member variable of class B is incremented
+			iii. add method of parent class A is invoked with 'e'
+			iv. element e is added to the linked list of parent class A
+			v. returns true from add method of class A
+			vi. returns true from add method of class B
+	      f. while loop terminates when iterator has no next element
+	      g. returns true
+Statement 4 : a. getAddCount of child class B is invoked and gets the addCount value i.e., addCount = 6
+	      b. getI of parent class A is invoked and gets the value of i i.e., i = 0
+              c. final output is 6 + 0 = 6 is printed to console
+
+
