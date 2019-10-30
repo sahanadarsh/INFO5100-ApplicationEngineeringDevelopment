@@ -1,0 +1,16 @@
+Write two differences between ArrayList and LinkedList. 
+
+1. ArrayList is better for storing and accessing data whereas LinkedList is better for manipulaing data. 
+
+2. Insertion and removal of data is easy and fast in LinkedList as compared to ArrayList because of no risk of resizing array.
+
+3. In ArrayList, time complexity is O(1) to get an element from the ArrayList whereas in LinkedList average time complexity is O(n/4), worst case time complexity is O(n).
+
+4. ArrayList class can act as a list only because it implements List only whereas LinkedList class can act as a list and queue both because it implements List and Deque interfaces.
+
+
+
+
+
+
+
