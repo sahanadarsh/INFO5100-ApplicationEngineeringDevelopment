@@ -76,4 +76,3 @@ Statement 4 : a. getAddCount of child class B is invoked and gets the addCount v
 	      b. getI of parent class A is invoked and gets the value of i i.e., i = 0
               c. final output is 6 + 0 = 6 is printed to console
 
-
