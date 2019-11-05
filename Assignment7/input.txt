@@ -1,0 +1,5 @@
+The sky is blue. The sky is red.
+The sky is orange.
+The sky is pink.
+The sky is white. The sky is black.
+This is test
